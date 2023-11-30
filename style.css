@@ -1,0 +1,219 @@
+:root {
+    font: 100 16px "poppins reg";
+    --Purple: hsl(259, 100%, 65%);
+    --Light_red: hsl(0, 100%, 67%);
+    --White: hsl(0, 0%, 100%);
+    --Off_white: hsl(0, 0%, 94%);
+    --Light_grey: hsl(0, 0%, 86%);
+    --Smokey_grey: hsl(0, 1%, 44%);
+    --Off_black: hsl(0, 0%, 8%);
+}
+
+@font-face {
+    font-family: "poppins reg";
+    src: url(./Fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: "poppins bold";
+    src: url(./Fonts/Poppins-ExtraBold.ttf);
+}
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: max(100vw, 230px);
+    height: max(100vh, 420px);
+    display: grid;
+    place-content: center;
+    grid-template-columns: min(90%, 930px); 
+    grid-template-rows: auto;
+    background-color: var(--Off_white);
+}
+
+main {
+    padding: 4%;
+    padding-bottom: calc(12% + 5.6px);
+    grid-column: 1;
+    font-size: clamp(1em, 0.2em + 2.0vh, 2em); 
+    border-radius: 4% 4% 27% 4% / 4% 4% 18% 4%;
+    background-color: var(--White);
+}
+
+
+/*form styles*/
+
+form {
+    display: flex;
+    width: min(100%, 700px);
+    column-gap: 4%;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    width: 0; 
+    row-gap: 6px;
+}
+
+form > * {
+    flex: 1;
+}
+
+label input {
+    font-size: clamp(1rem, 0.8rem + 2.1vh, 2rem);
+    padding: 5%;
+    border-radius: 6% / 15%;
+    border: 1px solid var(--Light_grey);
+    font-family: "poppins reg";
+    font-weight: 900;
+    background-color: var(--White);
+}
+
+label h3 {
+    font-size: clamp(10px, 0.5rem + 1vmin, 1rem);
+    letter-spacing: 0.2em;
+    font-weight: 900;
+    color: var(--Smokey_grey);
+}
+
+label input:hover {
+    border-color: var(--Off_black);
+    cursor: pointer;
+}
+
+label input:autofill {
+    box-shadow: inset 0 0 0 100px var(--White);
+} 
+
+/*Button Styles*/
+
+.submit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 0;
+    position: relative;
+    margin-top: 0.26em;
+    height: 2.5em;
+}
+
+.submit__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: min(30%, 87px);
+    height: 100%;
+    background-color: var(--Purple);
+    border: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    border-radius: 50% / 50%;
+    transition: left ease 1s;
+}
+
+.submit__btn img {
+    height: 80%;
+    width: auto;
+}
+
+.submit--ornament {
+    width: 100%;
+    height: 0.1em;
+    background-color: var(--Light_grey);
+}
+
+.submit__btn:hover {
+    background-color: var(--Off_black);
+    cursor: pointer;
+}
+
+/* Result Styles */
+
+.result {
+    font-family: "poppins bold";
+    margin-top: 0.5em;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 0.3rem;
+    font-size: clamp(1.3rem, 0.5rem + 3.2vw, 3.5rem);
+}
+
+.result > div {
+    display: flex;
+    gap: 0.1em;
+    flex: 1;
+}
+
+.result div h1:first-child {
+    color: var(--Purple);
+}
+
+/* Messages and error encounters */
+
+h4 {
+    font-size: clamp(9px, 0.3rem + 1vw, 14px);
+    font-weight: 100;
+    font-style: italic;
+    color: var(--Light_red);
+}
+
+h3.err {
+    color: var(--Light_red);
+}
+
+input.err {
+    border-color: var(--Light_red);
+}
+
+
+/* Media Queries */
+@media (min-width: 300px) AND (max-height: 574px) {
+    body {
+        grid-template-columns: min(90%, 350px); 
+    }
+
+    .result {
+        font-size: min(1.8rem, 0.5rem + 3.2vw);
+    }
+
+    h4 {
+        font-size: min(0.5em, 9px);
+    }
+}
+
+@media (min-width: 300px) AND (min-height: 575px) AND (max-height: 759px) {
+    body {
+        grid-template-columns: min(90%, 630px); 
+    }
+
+    .result {
+        font-size: min(2.5rem, 0.5rem + 3.2vw);
+    }
+
+    h4 {
+        font-size: 0.6em;
+    }
+}
+
+@media (min-width: 1000px) AND (min-height: 760px) {
+    .submit__btn {
+        left: 100%;
+        transform: translateX(-100%);
+        height: 160%;
+        width: 13%;
+    }
+}
+
+@media (max-width: 359px) {
+    label input {
+        font-size: 1rem;
+    }
+}
