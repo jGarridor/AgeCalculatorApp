@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: https://github.com/jGarridor/Frontend-Mentor-Age-calculator-app
-- Live Site URL: https://jgarridor.github.io/Frontend-Mentor-Age-calculator-app/
+- Live Site URL: [https://jgarridor.github.io/Frontend-Mentor-Age-calculator-app/](https://jgarridor.github.io/AgeCalculatorApp/)
 
 ## My process
 
